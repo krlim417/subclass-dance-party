@@ -3,7 +3,11 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('discoBackground.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -20,9 +24,49 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
-  border:10px solid;
-  border-radius:10px;
-  position:absolute;
-  border-color: red; 
+
+.makeBlinkyDancer{
+  position: absolute;
+  height: 30%;
+  width: auto;
+}
+
+.spinDancer{
+  position: absolute;
+  height: 10%;
+  width: auto;
+}
+.makeBlinkyDancer:hover{
+  height: 40%;
+  width: auto;
+}
+.shuffleDancer:hover,
+.colorChangeDancer:hover{
+  height: 20%;
+  width: auto;
+}
+
+.shuffleDancer {
+  position: absolute;
+  height: 10%;
+  width: auto;
+}
+
+.colorChangeDancer{
+  position: absolute;
+  height: 10%;
+  width: auto;
+  border: 10px solid;
+  border-style: solid;
+  border-color: blue;
+}
+
+.highFive{
+  display: none;
+  height: auto;
+  width: 10%;
+  float: right;
+  position: relative;
+  left: -43%; /* or right 50% */
+  text-align: left;
 }

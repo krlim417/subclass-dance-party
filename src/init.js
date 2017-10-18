@@ -28,6 +28,27 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    // check if dancers are near each other
+    for (let i = 0; i < window.dancers.length; i++) {
+      var offsetTop = (dancer.$node.offset().top - window.dancers[i].$node.offset().top) / 2;
+      var offsetLeft = (dancer.$node.offset().left - window.dancers[i].$node.offset().left) / 2;
+      if (offsetTop < 150 && offsetLeft < 150) { 
+        $('.highFive').show().delay(1000).fadeOut('slow');
+      } 
+    }
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    var spaceBetweenDancers = $("body").width() / window.dancers.length;
+    var mid = $("body").height() / 2;
+    var middle = spaceBetweenDancers / 2;
+    var position = 0;
+    for (let dancer of window.dancers) {
+      dancer.lineUp(mid, position + middle);
+      position += spaceBetweenDancers;
+    }
   });
 });
 

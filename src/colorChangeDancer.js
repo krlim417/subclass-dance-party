@@ -1,6 +1,6 @@
 var colorChangeDancer = function (top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
-
+  this.$node = ($('<img class="colorChangeDancer" src="colorDancer.gif">'));
   makeDancer.call(this, top, left, timeBetweenSteps);
 };
 
